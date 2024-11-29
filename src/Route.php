@@ -25,7 +25,7 @@ class Route implements TokenInterface
      * @param callable            $handler the route callback to execute if this route matches
      * @throws InvalidArgumentException if the given $handler is not a valid callable
      */
-    public function __construct(TokenInterface $token = null, $handler)
+    public function __construct(?TokenInterface $token = null, $handler)
     {
         if (!is_callable($handler)) {
             throw new InvalidArgumentException('Route handler is not a valid callable');

@@ -21,7 +21,7 @@ class Router
      *
      * @param null|Tokenizer $tokenizer (optional) Tokenizer to use to create route tokens from given route expressions
      */
-    public function __construct(Tokenizer $tokenizer = null)
+    public function __construct(?Tokenizer $tokenizer = null)
     {
         if ($tokenizer === null) {
             $tokenizer = new Tokenizer();
@@ -102,7 +102,7 @@ class Router
      * @param array $argv
      * @uses self::handleArgv()
      */
-    public function execArgv(array $argv = null)
+    public function execArgv(?array $argv = null)
     {
         try {
             $this->handleArgv($argv);
@@ -142,7 +142,7 @@ class Router
      * @throws NoRouteFoundException If no matching route could be found
      * @uses self::handleArgs()
      */
-    public function handleArgv(array $argv = null)
+    public function handleArgv(?array $argv = null)
     {
         if ($argv === null) {
             $argv = isset($_SERVER['argv']) ? $_SERVER['argv'] : array();

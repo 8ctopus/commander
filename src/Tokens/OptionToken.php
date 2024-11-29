@@ -10,7 +10,7 @@ class OptionToken implements TokenInterface
     private $placeholder;
     private $required;
 
-    public function __construct($name, TokenInterface $placeholder = null, $required = false)
+    public function __construct($name, ?TokenInterface $placeholder = null, $required = false)
     {
         if (!isset($name[1]) || $name[0] !== '-') {
             throw new InvalidArgumentException('Option name must start with a dash');
